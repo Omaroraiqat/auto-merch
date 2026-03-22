@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Auto.MERCH</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:black;
+    color:white;
+}
+
+header{
+    text-align:center;
+    padding:25px;
+    border-bottom:1px solid white;
+}
+
+.logo{
+    width:180px;
+}
+
+.section{
+    display:none;
+    padding:40px;
+    max-width:1000px;
+    margin:auto;
+    text-align:center;
+    opacity:0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.active{
+    display:block;
+    opacity:1;
+}
+
+button{
+    padding:12px 22px;
+    background:white;
+    color:black;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:bold;
+    margin:10px;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#ddd;
+}
+
+.categories{
+    margin-top:30px;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+    margin-top:40px;
+}
+
+.product{
+    background:#111;
+    padding:20px;
+    border-radius:10px;
+}
+
+.product img{
+    width:100%;
+    border-radius:10px;
+}
+
+.price{
+    margin:10px 0;
+}
+
+.gallery img{
+    width:100%;
+    margin-bottom:10px;
+    border-radius:10px;
+}
+
+select,input{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    background:#111;
+    color:white;
+    border:1px solid #333;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    border-top:1px solid #333;
+    margin-top:40px;
+    font-size:0.9em;
+}
+
+.instagram-button{
+    margin-top:30px;
+}
+
+.instagram-button a{
+    display:inline-block;
+    text-decoration:none;
+    color:white;
+    background:#E1306C;
+    padding:12px 25px;
+    border-radius:6px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.instagram-button a:hover{
+    background:#C12C61;
+}
+
+.owned-by{
+    margin-top:20px;
+}
+
+.owned-by a{
+    text-decoration:none;
+    color:white;
+    margin:0 8px;
+    font-size:0.9em;
+    transition:0.3s;
+}
+
+.owned-by a:hover{
+    text-decoration:underline;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <img src="logo.png" class="logo">
+</header>
+
+<!-- MAIN PAGE -->
+<div id="home" class="section active">
+    <h1>Auto.MERCH</h1>
+
+    <p>
+    Auto.MERCH is a streetwear brand inspired by automotive culture.
+    Our designs are built for car enthusiasts who want performance,
+    style, and automotive heritage in their everyday clothing.
+    </p>
+
+    <p>
+    Currently available in Jeddah.
+    Amman, Jordan coming soon.
+    </p>
+
+    <div class="categories">
+        <button onclick="openPage('bmw')">BMW</button>
+        <button onclick="openPage('porsche')">Porsche</button>
+        <button onclick="openPage('ferrari')">Ferrari</button>
+    </div>
+
+    <!-- Instagram main button -->
+    <div class="instagram-button">
+        <a href="https://www.instagram.com/auto.merch?igsh=MWF0bjA3ZWpwNjQ0cw%3D%3D&utm_source=qr" target="_blank">Instagram</a>
+    </div>
+</div>
+
+<!-- BMW CATEGORY -->
+<div id="bmw" class="section">
+    <button onclick="openPage('home')">← Back</button>
+    <h2>BMW Collection</h2>
+
+    <div class="products">
+        <div class="product">
+            <img src="hoodie.jpg">
+            <h3>BMW Auto Hoodie</h3>
+            <p class="price">84 SAR</p>
+            <button onclick="openPage('hoodie')">View</button>
+        </div>
+
+        <div class="product">
+            <img src="shirt.jpg">
+            <h3>BMW M5 V10 Tee</h3>
+            <p class="price">84 SAR</p>
+            <button onclick="openPage('shirt')">View</button>
+        </div>
+    </div>
+</div>
+
+<!-- PORSCHE CATEGORY -->
+<div id="porsche" class="section">
+    <button onclick="openPage('home')">← Back</button>
+    <h2>Porsche Collection</h2>
+    <p>Coming Soon</p>
+</div>
+
+<!-- FERRARI CATEGORY -->
+<div id="ferrari" class="section">
+    <button onclick="openPage('home')">← Back</button>
+    <h2>Ferrari Collection</h2>
+    <p>Coming Soon</p>
+</div>
+
+<!-- HOODIE PAGE -->
+<div id="hoodie" class="section">
+    <button onclick="openPage('bmw')">← Back</button>
+    <h2>BMW Auto Hoodie</h2>
+
+    <div class="gallery">
+        <img src="hoodie.jpg">
+        <img src="hoodie-back.jpg">
+    </div>
+
+    <p>Price: 84 SAR</p>
+
+    <label>Size</label>
+    <select>
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+    </select>
+
+    <label>Delivery Location (Jeddah)</label>
+    <input type="text" placeholder="Enter your district">
+
+    <label>Phone Number</label>
+    <input type="text" placeholder="Your phone">
+
+    <button>Submit Order</button>
+</div>
+
+<!-- SHIRT PAGE -->
+<div id="shirt" class="section">
+    <button onclick="openPage('bmw')">← Back</button>
+    <h2>BMW M5 V10 Tee</h2>
+
+    <div class="gallery">
+        <img src="shirt.jpg">
+        <img src="shirt-back.jpg">
+    </div>
+
+    <p>Price: 84 SAR</p>
+
+    <label>Size</label>
+    <select>
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+    </select>
+
+    <label>Delivery Location (Jeddah)</label>
+    <input type="text" placeholder="Enter your district">
+
+    <label>Phone Number</label>
+    <input type="text" placeholder="Your phone">
+
+    <button>Submit Order</button>
+</div>
+
+<footer>
+    <p>Auto.MERCH</p>
+    <p>Delivery from Jeddah</p>
+
+    <div class="owned-by">
+        <p>Owned by 
+            <a href="https://www.instagram.com/ali.oraiqat?igsh=cnlpaXp0aTd1MHRz" target="_blank">@ali.oraiqat</a> | 
+            <a href="https://www.instagram.com/omar_oraiqat2?igsh=MTF3amlxZTlsb2N3dQ%3D%3D&utm_source=qr" target="_blank">@omar_oraiqat2</a>
+        </p>
+    </div>
+</footer>
+
+<script>
+function openPage(page){
+    let sections = document.querySelectorAll(".section");
+    sections.forEach(section=>{
+        section.style.opacity = 0;
+    });
+    setTimeout(()=>{
+        sections.forEach(section=>{
+            section.classList.remove("active");
+        });
+        document.getElementById(page).classList.add("active");
+        document.getElementById(page).style.opacity = 1;
+    }, 200);
+    window.scrollTo(0,0);
+}
+</script>
+
+</body>
+</html>
